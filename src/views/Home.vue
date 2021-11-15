@@ -42,8 +42,8 @@
         <div class="item-right">
           <p class="item-tag" @click="addFilter(job.role)">{{ job.role }}</p>
           <p class="item-tag" @click="addFilter(job.level)">{{ job.level }}</p>
-          <p v-for="(language, index) in job.languages" :key="index" class="item-tag" @click="addFilter(language)">{{ language }}</p>
-          <p v-for="(tool, index) in job.tools" :key="index" class="item-tag" @click="addFilter(tool)">{{ tool }}</p>
+          <p v-for="(language, indexLang) in job.languages" :key="indexLang" class="item-tag" @click="addFilter(language)">{{ language }}</p>
+          <p v-for="(tool, indexTool) in job.tools" :key="indexTool" class="item-tag" @click="addFilter(tool)">{{ tool }}</p>
         </div>
       </div>
     </div>
