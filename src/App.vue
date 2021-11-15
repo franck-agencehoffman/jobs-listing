@@ -33,14 +33,21 @@ export default {
   },
   methods: mapActions('app', [
     'closeAddToHomeScreenModalForApple',
-    'serviceWorkerSkipWaiting'
-  ])
+    'serviceWorkerSkipWaiting',
+    'fetchData'
+  ]),
+  mounted() {
+    this.fetchData()
+  }
 }
 </script>
 
 <style lang="scss">
+@import '@/theme/variables.scss';
+
 body {
   margin: 0;
+  background: #EFFAFA;
 
   a {
     font-weight: 500;
@@ -48,11 +55,7 @@ body {
   }
 
   #app {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
+    font-family: $fontSpartan;
     color: #2c3e50;
 
     .new-content-available-toastr {
@@ -74,16 +77,10 @@ body {
     }
 
     .main-wrapper {
-      margin-top: 3.6rem;
-      padding: 20px;
-
       .page-wrapper {
-        width: 60%;
+        max-width: 1110px;
         margin: auto;
-
-        @media screen and (max-width: 1000px) {
-          width: 100%;
-        }
+        padding: 32px 24px;
       }
     }
   }

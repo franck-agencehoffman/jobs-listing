@@ -1,4 +1,5 @@
 import { isNil } from 'lodash'
+import axios from 'axios'
 
 export default {
   /**
@@ -18,5 +19,11 @@ export default {
 
     commit('setRefreshingApp', true)
     state.SWRegistrationForNewContent.waiting.postMessage('skipWaiting')
+  },
+
+  async fetchData({ commit }) {
+    const response = await axios.get('/data/data.json')
+
+    commit('setJobs', response.data)
   }
 }
