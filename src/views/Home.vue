@@ -372,7 +372,7 @@ export default {
       }
 
       .item-tag {
-        margin: 0 16px 16px 0;
+        margin: 0 16px 0 0;
         padding: 4px 8px;
         border-radius: 4px;
         font-style: normal;
@@ -393,6 +393,10 @@ export default {
         &:hover {
           color: #ffffff;
           background: rgba(#5CA5A5, 1);
+        }
+
+        @media (max-width: 768px) {
+          margin: 0 16px 16px 0;
         }
       }
     }
