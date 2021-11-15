@@ -1,6 +1,5 @@
 <template>
   <div class="page-wrapper">
-
     <div v-if="selectedFilters.length > 0" class="tool-filters">
       <div class="filters">
         <div v-for="(filter, index) in selectedFilters" :key="index" class="filter">
@@ -47,7 +46,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -241,11 +239,12 @@ export default {
       .item-left {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 50%;
 
         @media (max-width: 768px) {
           flex-direction: column;
           align-items: flex-start;
+          width: 100%;
         }
       }
 
@@ -364,9 +363,11 @@ export default {
         justify-content: flex-end;
         align-items: center;
         flex-wrap: wrap;
+        width: 50%;
 
         @media (max-width: 768px) {
           justify-content: flex-start;
+          width: 100%;
         }
       }
 
